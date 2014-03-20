@@ -7,6 +7,7 @@ Ever tried to get someones attention but they had headphones on? Navi notify is 
 
 Simply install the egg (sudo python setup.py install) and execute "start-navi"
 
-to notify, simply call notify <hostname> from any other machine (you have to install this on the client as well.
+NOTE: this requires pygame, which at least on ubuntu, is MUCH easier to install from the package repo vs pip (apt-get install python-pygame_
+to notify, simply call notify <hostname> from any other machine (you have to install this on the client as well).
 
 There is also a basic directory, you can call notify <name> and it the client will attempt to lookup the persons computer.
