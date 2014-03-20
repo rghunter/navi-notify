@@ -1,0 +1,22 @@
+#!/usr/bin/python
+
+import xmlrpclib, pygame, time, glob, random, socket
+from SimpleXMLRPCServer import SimpleXMLRPCServer
+
+def navi_sound():
+    file_list = glob.glob("/opt/navi/*.wav")
+    pygame.mixer.pre_init(frequency=32000, size=-16, channels=2, buffer=4096)
+    pygame.init()
+    pygame.mixer.Sound(random.choice(file_list)).play()
+    time.sleep(0.5)
+    return True
+
+def main():
+    hostname = socket.gethostname()
+    print "Binding on %s" % hostname
+    server = SimpleXMLRPCServer((hostname+".spr.local", 8000))
+    server.register_function(navi_sound,"notify")
+    server.serve_forever()
+
+if __name__ == "__main__":
+    main()
