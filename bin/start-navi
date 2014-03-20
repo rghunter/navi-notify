@@ -1,0 +1,3 @@
+#!/bin/bash
+
+screen -S navi-notify -d -m navi-notify

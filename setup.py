@@ -9,5 +9,5 @@ setup(
     packages = find_packages(),
     data_files=[('/opt/navi/' , ['sound/hey.wav', 'sound/listen.wav', 'sound/hello.wav', 'sound/look.wav'])],
     install_requires=['distribute','pygame'],
-    scripts = ['bin/navi-notify','bin/notify']
+    scripts = ['bin/navi-notify','bin/notify', 'bin/start-navi']
 )
