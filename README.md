@@ -3,6 +3,8 @@
 
 Ever tried to get someones attention but they had headphones on? Navi notify is the solution!! Once installed, you can send remote "notifications" that pump the annoying nagging of Navi right into their ear!
 
+http://www.youtube.com/watch?v=0sZ0Yn16Dgg
+
 ##Installation
 
 Simply install the egg (sudo python setup.py install) and execute "start-navi"
