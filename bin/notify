@@ -5,8 +5,10 @@ def main():
 	if len(sys.argv) != 2:
 		print "Please specify a host name"
 		sys.exit()
-	proxy = xmlrpclib.ServerProxy("http://"+sys.argv[1]+":8000/")
-	proxy.notify()
+	proxy = xmlrpclib.ServerProxy("http://box:8000/")
+	#proxy = xmlrpclib.ServerProxy("http://"+sys.argv[1]+":8000/")
+
+	print proxy.notify()
 
 
 if __name__ == "__main__":
