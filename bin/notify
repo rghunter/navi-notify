@@ -1,14 +1,28 @@
 #!/usr/bin/python
 import xmlrpclib, sys
 
+lut = {'peter' : '192.168.76.24', 'ryan' : 'oban.spr.local', 'catherine' : 'jameson.spr.local'}
+
+def directory(name):
+	if name in lut:
+		print "found %s in directory @ %s" % (name, lut[name])
+		return lut[name]
+	else:
+		print "could not find %s in directory, trying as hostname" % name
+		return name
+	
+
 def main():
 	if len(sys.argv) != 2:
 		print "Please specify a host name"
 		sys.exit()
-	proxy = xmlrpclib.ServerProxy("http://box:8000/")
-	#proxy = xmlrpclib.ServerProxy("http://"+sys.argv[1]+":8000/")
-
-	print proxy.notify()
+#	proxy = xmlrpclib.ServerProxy("http://box:8000/")
+	print directory(sys.argv[1])
+	try:
+		proxy = xmlrpclib.ServerProxy("http://"+directory(sys.argv[1])+":8000/")
+		print proxy.notify()
+	except Exception:
+		print "Failed to Notify %s" % sys.argv[1]
 
 
 if __name__ == "__main__":
